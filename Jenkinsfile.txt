@@ -1,0 +1,24 @@
+
+pipeline {
+    agent any
+    options {
+        skipStagesAfterUnstable()
+    }
+
+    stages {
+     stage('Maven Build') {
+            steps { 
+                script{
+                 sh 'mvn -f pom.xml clean install' 
+                }
+            }
+        
+    }
+    stage('Deploy'){
+            steps {          
+            	sh 'kubectl apply -f mysql-svc.yaml'
+                    sh 'kubectl apply -f mysql-deployment.yaml'
+            }
+        }
+}
+}
