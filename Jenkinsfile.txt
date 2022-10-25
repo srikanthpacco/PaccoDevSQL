@@ -16,7 +16,6 @@ pipeline {
     }
     stage('Deploy'){
             steps {          
-            	sh 'kubectl apply -f mysql-svc.yaml'
                     sh 'kubectl apply -f mysql-deployment.yaml'
             }
         }
