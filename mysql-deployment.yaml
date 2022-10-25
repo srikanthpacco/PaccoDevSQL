@@ -19,8 +19,7 @@ spec:
   capacity:                                                                                   
     storage: 5Gi     
   accessModes:                                                                                
-    - ReadWriteOnce   
-  storageClassName: gp2                                                                        
+    - ReadWriteOnce                                                                       
   hostPath:                                                                                   
     path: "/var/lib/mysql"                                                                    
 ---                                                                                           
