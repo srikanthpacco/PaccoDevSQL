@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: mysql-pv-claim-sc
 spec:
-  storageClassName: ase-node-local
+  storageClassName: standard
   accessModes:
     - ReadWriteOnce
   resources:
